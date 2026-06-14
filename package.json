@@ -1,0 +1,12 @@
+{
+  "name": "custom-backend",
+  "version": "1.0.0",
+  "description": "full backend files practice",
+  "license": "ISC",
+  "author": "lokendra pandey",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
