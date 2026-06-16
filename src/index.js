@@ -1,14 +1,14 @@
-// require('dotenv').config({path: './env'})
-import dotenv from "dotenv"
-import connectDB from "./db/index.js";
-// import {app} from './app.js'
-dotenv.config({
-    path: './.env'
-})
+// // require('dotenv').config({path: './env'})
+// import dotenv from "dotenv"
+// import connectDB from "./db/index.js";
+// // import {app} from './app.js'
+// dotenv.config({
+//     path: './.env'
+// })
 
 
-
-connectDB()
+// console.log(process.env.MONGODB_URI)
+// connectDB()
 
 
 
@@ -19,21 +19,21 @@ connectDB()
 // #lokendra123
 
 
-// import mongoose from 'mongoose';
-// import express from 'express';
+import mongoose from 'mongoose';
+import express from 'express';
 
-// const app = express();
-// const PORT = 8000;
-// const MONGODB_URI = "mongodb://localhost:27017/test";
+const app = express();
+const PORT = 8000;
+const MONGODB_URI = "mongodb://localhost:27017/test";
 
-// mongoose.connect(MONGODB_URI)
-//   .then(() => {
-//     console.log("MongoDB connected!");
-//     app.listen(PORT, () => {
-//       console.log(`Server running on port ${PORT}`);
-//     });
-//   })
-//   .catch((error) => {
-//     console.log("MONGODB connection FAILED", error);
-//     process.exit(1);
-//   });
+mongoose.connect(MONGODB_URI)
+  .then(() => {
+    console.log("MongoDB connected!");
+    app.listen(PORT, () => {
+      console.log(`Server running on port ${PORT}`);
+    });
+  })
+  .catch((error) => {
+    console.log("MONGODB connection FAILED", error);
+    process.exit(1);
+  });
